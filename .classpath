@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="output" path="bin/default"/>
-	<classpathentry output="bin/main" kind="src" path="src">
+	<classpathentry output="bin/test" kind="src" path="src">
 		<attributes>
-			<attribute name="gradle_scope" value="main"/>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="gradle_scope" value="test"/>
+			<attribute name="gradle_used_by_scope" value="test"/>
+			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17/"/>
@@ -23,22 +24,12 @@
 			<attribute name="without_test_code" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.8.2/ef25ff956479198a71a7d1b23e11f27fb09393b6/junit-platform-engine-1.8.2-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.8.2/b737de09f19864bd136805c84df7999a142fec29/junit-platform-engine-1.8.2.jar">
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.8.2/386b61876dd33d0ef0381189d3c1db9455d99659/junit-platform-commons-1.8.2-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.8.2/32c8b8617c1342376fd5af2053da6410d8866861/junit-platform-commons-1.8.2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.8.2/ea87fe3d752e24397f71f347872e79a89c61a704/junit-jupiter-engine-5.8.2-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.8.2/c598b4328d2f397194d11df3b1648d68d7d990e3/junit-jupiter-engine-5.8.2.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.8.2/429d353563c5fb35a3d47076bedbf75161e976c2/junit-jupiter-api-5.8.2-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.8.2/4c21029217adf07e4c0d0c5e192b6bf610c94bdc/junit-jupiter-api-5.8.2.jar">
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -48,14 +39,24 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/41d55b3c2254de9837b4ec8923cbd371b8a7eab5/opentest4j-1.2.0-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/28c11eb91f9b6d8e200631d46e20a7f407f2a046/opentest4j-1.2.0.jar">
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/e0787a997746ac32639e0bf3cb27af8dce8a3428/apiguardian-api-1.1.2-sources.jar" kind="lib" path="C:/Users/scott/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar">
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar">
 		<attributes>
-			<attribute name="gradle_used_by_scope" value=""/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/scott/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
 </classpath>
