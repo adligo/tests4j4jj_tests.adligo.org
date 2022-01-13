@@ -28,6 +28,26 @@ public class JjApiTrialTrial extends JjSourceFileTrial {
     //assertNull("should be null", (Object) null);
     //assertNull((Object) null, "should be null");
     assertNotNull("", "should be null");
+    
+    assertNotEquals(123, 1234);
+    assertNotEquals("123 should NOT match with 1234", 123, 1234);
+    assertNotEquals(123, 1235, "123 should NOT match with 1235");
+    assertNotEquals("123", "1236");
+    assertNotEquals("String 123 shoudl match string 1237", "123", "1237");
+    
+    assertNotSame(123, 1234);
+    assertNotSame("123 should NOT match with 1234", 123, 1234);
+    assertNotSame(123, 1235, "123 should NOT match with 1235");
+    assertNotSame("123", "1236");
+    
+    Object same = new Object();
+    assertSame(same, same);
+    assertSame("same should match with same", same, same);
+    assertSame(same, same, "123 should NOT match with 1235");
+    
+    assertTrue(true);
+    assertTrue(true, "should be false");
+    assertTrue("should be false", true);
   }
   
   @Test
@@ -45,5 +65,20 @@ public class JjApiTrialTrial extends JjSourceFileTrial {
     
     notNull("");
     notNull("should be null", "");    
+    
+    notEquals(123, 1234);
+    notEquals("123 should NOT match with 1234", 123, 1234);
+    notEquals("123", "1236");
+    notEquals("String 123 shoudl match string 1237", "123", "1237");
+    
+    notSame(123, 1234);
+    notSame("123 should NOT match with 1234", 123, 1234);
+    
+    Object same = new Object();
+    same(same, same);
+    same("same should match with same", same, same);
+    
+    isTrue(true);
+    isTrue("should be false", true);
   }
 }
