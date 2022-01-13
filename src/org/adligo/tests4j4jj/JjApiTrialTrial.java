@@ -49,7 +49,7 @@ public class JjApiTrialTrial extends JjSourceFileTrial {
     assertTrue(true, "should be false");
     assertTrue("should be false", true);
   }
-  
+
   @Test
   public void testShortApi() {
     equals(123, 123);
@@ -80,5 +80,33 @@ public class JjApiTrialTrial extends JjSourceFileTrial {
     
     isTrue(true);
     isTrue("should be false", true);
+  }
+
+
+  @Test
+  public void testShortApiChaining() {
+    Integer i = 123;
+    same(i, equals(123, i));
+    same(i, equals("123 should match 123", 123, i));
+    String s = "123";
+    same(s, equals("123", s));
+    same(s, equals("String 123 should match String 123", "123", s));
+    
+    
+    same(s, notNull(s));
+    same(s, notNull("should NOT be null", s));    
+    
+    same(i, notEquals(1234, i));
+    same(i, notEquals("123 should NOT match with 1234", 1234, i));
+    same(s, notEquals("1236", s));
+    same(s, notEquals("String 123 shoudl match string 1237", "1237", s));
+    
+    same(i, notSame(1234, i));
+    same(i, notSame("123 should NOT match with 1234", 1234, i));
+    
+    Object same = new Object();
+    same(same, same(same, same));
+    same(same, same("same should match with same", same, same));
+    
   }
 }
