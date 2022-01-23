@@ -1,6 +1,7 @@
 package org.adligo.tests4j4jj;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +28,27 @@ import org.junit.jupiter.api.Test;
  */
 public class JjAbstractTrialTrial extends JjSourceFileTrial {
 
+  @Test
+  public void testCollectionApi() {
+    contains(List.of(1), 1);  
+    contains("message", List.of(1), 1);  
+    
+    containsKey(Map.of(1,2), 1);  
+    containsKey("message", Map.of(1,2), 1);  
+    
+    containsValue(Map.of(1,2), 2);  
+    containsValue("message", Map.of(1,2), 2);  
+    
+    notContains(List.of(1), 2);  
+    notContains("message", List.of(1), 2);  
+    
+    notContainsKey(Map.of(1,2), 2);  
+    notContainsKey("message", Map.of(1,2), 2);  
+    
+    notContainsValue(Map.of(1,2), 1);  
+    notContainsValue("message", Map.of(1,2), 1);  
+  }
+  
   @Test
   public void testLegacyApi() {
     assertEquals(123, 123);
