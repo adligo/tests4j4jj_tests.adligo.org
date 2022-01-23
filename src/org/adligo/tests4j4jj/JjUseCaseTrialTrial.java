@@ -3,7 +3,7 @@ package org.adligo.tests4j4jj;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests for {@link JjApiTrial}
+ * Tests for {@link JjApirial}
  * @author scott
  * <pre><code>
  *         ---------------- Apache ICENSE-2.0 --------------------------
@@ -23,10 +23,10 @@ import org.junit.jupiter.api.Test;
  *         permissions and limitations under the License.
  *         </code></pre>
  */
-public class JjApiTrialTrial extends JjApiTrial {
+public class JjUseCaseTrialTrial extends JjApiTrial {
 
   @Test
   public void testConstructor() {
-    notNull(new JjApiTrial());
+    notNull(new JjUseCaseTrial());
   }
 }
