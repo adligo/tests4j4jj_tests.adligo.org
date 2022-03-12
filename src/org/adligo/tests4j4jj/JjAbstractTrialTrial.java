@@ -1,5 +1,7 @@
 package org.adligo.tests4j4jj;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,25 +30,40 @@ import org.junit.jupiter.api.Test;
  */
 public class JjAbstractTrialTrial extends JjSourceFileTrial {
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
+  public static <T> List<T> of(T ... ts ) {
+	List<T> r = new ArrayList();
+	for (T t: ts) {
+		r.add(t);
+	}
+	return r;
+  }
+  
+  @SuppressWarnings({ "unchecked", "rawtypes" })
+  public static <K,V> Map<K,V> mapOf(K k, V v ) {
+	Map<K,V> r = new HashMap<K, V>();
+	r.put(k, v);
+	return r;
+  }
   @Test
   public void testCollectionApi() {
-    contains(List.of(1), 1);  
-    contains("message", List.of(1), 1);  
+    contains(of(1), 1);  
+    contains("message", of(1), 1);  
     
-    containsKey(Map.of(1,2), 1);  
-    containsKey("message", Map.of(1,2), 1);  
+    containsKey(mapOf(1,2), 1);  
+    containsKey("message", mapOf(1,2), 1);  
     
-    containsValue(Map.of(1,2), 2);  
-    containsValue("message", Map.of(1,2), 2);  
+    containsValue(mapOf(1,2), 2);  
+    containsValue("message", mapOf(1,2), 2);  
     
-    notContains(List.of(1), 2);  
-    notContains("message", List.of(1), 2);  
+    notContains(of(1), 2);  
+    notContains("message", of(1), 2);  
     
-    notContainsKey(Map.of(1,2), 2);  
-    notContainsKey("message", Map.of(1,2), 2);  
+    notContainsKey(mapOf(1,2), 2);  
+    notContainsKey("message", mapOf(1,2), 2);  
     
-    notContainsValue(Map.of(1,2), 1);  
-    notContainsValue("message", Map.of(1,2), 1);  
+    notContainsValue(mapOf(1,2), 1);  
+    notContainsValue("message", mapOf(1,2), 1);  
   }
   
   @Test
@@ -158,16 +175,16 @@ public class JjAbstractTrialTrial extends JjSourceFileTrial {
 
   @Test
   public void testShortApiThrown() {
-    thrown(List.of(new RuntimeException("test Thrown Message")),
+    thrown(of(new RuntimeException("test Thrown Message")),
         () -> { throw new RuntimeException("test Thrown Message"); });
-    thrown(List.of(new RuntimeException("test Thrown Message"),
+    thrown(of(new RuntimeException("test Thrown Message"),
         new IllegalStateException("test ISE")),
         () -> { 
           IllegalStateException ise = new IllegalStateException("test ISE");
           throw new RuntimeException("test Thrown Message", ise); 
         
         });
-    thrown(List.of(new RuntimeException("test Thrown Message"),
+    thrown(of(new RuntimeException("test Thrown Message"),
         new IllegalStateException("test ISE"),
         new IllegalArgumentException("test IAE")),
         () -> { 
@@ -178,10 +195,10 @@ public class JjAbstractTrialTrial extends JjSourceFileTrial {
     
     //with custom error messages
     thrown("bad code, your message goes here", 
-        List.of(new RuntimeException("test Thrown Message")),
+        of(new RuntimeException("test Thrown Message")),
         () -> { throw new RuntimeException("test Thrown Message"); });
     thrown("bad code, your message goes here", 
-        List.of(new RuntimeException("test Thrown Message"),
+        of(new RuntimeException("test Thrown Message"),
         new IllegalStateException("test ISE")),
         () -> { 
           IllegalStateException ise = new IllegalStateException("test ISE");
@@ -189,7 +206,7 @@ public class JjAbstractTrialTrial extends JjSourceFileTrial {
         
         });
     thrown("bad code, your message goes here", 
-        List.of(new RuntimeException("test Thrown Message"),
+        of(new RuntimeException("test Thrown Message"),
         new IllegalStateException("test ISE"),
         new IllegalArgumentException("test IAE")),
         () -> { 
@@ -199,10 +216,10 @@ public class JjAbstractTrialTrial extends JjSourceFileTrial {
         });
     
     //
-    thrown(false, List.of(new RuntimeException("test Thrown Message")),
+    thrown(false, of(new RuntimeException("test Thrown Message")),
         () -> { System.out.println("in thrown run with check = false"); });
     thrown(false, "bad code, your message goes here", 
-        List.of(new RuntimeException("test Thrown Message")),
+        of(new RuntimeException("test Thrown Message")),
         () -> { System.out.println("in thrown run with check = false"); });
   }
 }
