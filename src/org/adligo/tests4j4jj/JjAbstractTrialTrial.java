@@ -31,15 +31,6 @@ import org.junit.jupiter.api.Test;
 public class JjAbstractTrialTrial extends JjSourceFileTrial {
 
   @SuppressWarnings({ "unchecked", "rawtypes" })
-  public static <T> List<T> of(T ... ts ) {
-	List<T> r = new ArrayList();
-	for (T t: ts) {
-		r.add(t);
-	}
-	return r;
-  }
-  
-  @SuppressWarnings({ "unchecked", "rawtypes" })
   public static <K,V> Map<K,V> mapOf(K k, V v ) {
 	Map<K,V> r = new HashMap<K, V>();
 	r.put(k, v);
